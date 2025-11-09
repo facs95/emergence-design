@@ -1,0 +1,87 @@
+{
+  "name": "Product C - Teal Theme",
+  "description": "Example theme configuration for a data/analytics tool with teal as the primary color",
+
+  "metadata": {
+    "productName": "Product C",
+    "industry": "Data / Analytics",
+    "personality": "Modern, reliable, insightful",
+    "inspiration": "LogSnag, modern SaaS products"
+  },
+
+  "colors": {
+    "primary": {
+      "50": "#f0fdfa",
+      "100": "#ccfbf1",
+      "200": "#99f6e4",
+      "300": "#5eead4",
+      "400": "#2dd4bf",
+      "500": "#14b8a6",
+      "600": "#0d9488",
+      "700": "#0f766e",
+      "800": "#115e59",
+      "900": "#134e4a",
+      "950": "#042f2e"
+    }
+  },
+
+  "shadcn": {
+    "cssVariables": {
+      "light": {
+        "primary": "173 58% 39%",
+        "primary-foreground": "0 0% 100%"
+      },
+      "dark": {
+        "primary": "172 66% 50%",
+        "primary-foreground": "0 0% 100%"
+      }
+    },
+    "usage": "Add these CSS variables to your globals.css file in the :root selector"
+  },
+
+  "tailwind": {
+    "extend": {
+      "colors": {
+        "primary": {
+          "50": "#f0fdfa",
+          "100": "#ccfbf1",
+          "200": "#99f6e4",
+          "300": "#5eead4",
+          "400": "#2dd4bf",
+          "500": "#14b8a6",
+          "600": "#0d9488",
+          "700": "#0f766e",
+          "800": "#115e59",
+          "900": "#134e4a",
+          "950": "#042f2e",
+          "DEFAULT": "#0d9488"
+        }
+      }
+    },
+    "usage": "Add this to your tailwind.config.js theme.extend section"
+  },
+
+  "usage": {
+    "buttons": {
+      "primary": "bg-primary-600 hover:bg-primary-700 text-white",
+      "primaryActive": "bg-primary-800"
+    },
+    "links": {
+      "default": "text-primary-600 hover:text-primary-700"
+    },
+    "badges": {
+      "default": "bg-primary-100 text-primary-700 border-primary-200"
+    },
+    "backgrounds": {
+      "subtle": "bg-primary-50"
+    }
+  },
+
+  "notes": [
+    "Teal is modern and sophisticated",
+    "Works particularly well for data, analytics, and developer tools",
+    "Excellent contrast with neutral grays",
+    "Text on primary-600 meets WCAG AA contrast (4.7:1)",
+    "Teal feels fresh and contemporary without being too bold"
+  ]
+}

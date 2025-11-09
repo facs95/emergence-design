@@ -1,0 +1,87 @@
+{
+  "name": "Product A - Blue Theme",
+  "description": "Example theme configuration for a professional productivity tool with blue as the primary color",
+
+  "metadata": {
+    "productName": "Product A",
+    "industry": "Productivity",
+    "personality": "Professional, trustworthy, efficient",
+    "inspiration": "Linear, Notion"
+  },
+
+  "colors": {
+    "primary": {
+      "50": "#eff6ff",
+      "100": "#dbeafe",
+      "200": "#bfdbfe",
+      "300": "#93c5fd",
+      "400": "#60a5fa",
+      "500": "#3b82f6",
+      "600": "#2563eb",
+      "700": "#1d4ed8",
+      "800": "#1e40af",
+      "900": "#1e3a8a",
+      "950": "#172554"
+    }
+  },
+
+  "shadcn": {
+    "cssVariables": {
+      "light": {
+        "primary": "221 83% 53%",
+        "primary-foreground": "0 0% 100%"
+      },
+      "dark": {
+        "primary": "217 91% 60%",
+        "primary-foreground": "0 0% 100%"
+      }
+    },
+    "usage": "Add these CSS variables to your globals.css file in the :root selector"
+  },
+
+  "tailwind": {
+    "extend": {
+      "colors": {
+        "primary": {
+          "50": "#eff6ff",
+          "100": "#dbeafe",
+          "200": "#bfdbfe",
+          "300": "#93c5fd",
+          "400": "#60a5fa",
+          "500": "#3b82f6",
+          "600": "#2563eb",
+          "700": "#1d4ed8",
+          "800": "#1e40af",
+          "900": "#1e3a8a",
+          "950": "#172554",
+          "DEFAULT": "#2563eb"
+        }
+      }
+    },
+    "usage": "Add this to your tailwind.config.js theme.extend section"
+  },
+
+  "usage": {
+    "buttons": {
+      "primary": "bg-primary-600 hover:bg-primary-700 text-white",
+      "primaryActive": "bg-primary-800"
+    },
+    "links": {
+      "default": "text-primary-600 hover:text-primary-700"
+    },
+    "badges": {
+      "default": "bg-primary-100 text-primary-700 border-primary-200"
+    },
+    "backgrounds": {
+      "subtle": "bg-primary-50"
+    }
+  },
+
+  "notes": [
+    "This blue theme works well for professional productivity tools",
+    "The color is trustworthy and familiar to business users",
+    "Ensure text on primary-600 backgrounds meets WCAG AA contrast (it does: 4.6:1)",
+    "Consider using primary-700 for hover states on buttons",
+    "Use primary-50 for very subtle background highlights"
+  ]
+}

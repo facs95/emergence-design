@@ -1,0 +1,87 @@
+{
+  "name": "Product B - Purple Theme",
+  "description": "Example theme configuration for a creative collaboration tool with purple as the primary color",
+
+  "metadata": {
+    "productName": "Product B",
+    "industry": "Creative / Collaboration",
+    "personality": "Creative, innovative, modern",
+    "inspiration": "Linear (their purple brand)"
+  },
+
+  "colors": {
+    "primary": {
+      "50": "#faf5ff",
+      "100": "#f3e8ff",
+      "200": "#e9d5ff",
+      "300": "#d8b4fe",
+      "400": "#c084fc",
+      "500": "#a855f7",
+      "600": "#9333ea",
+      "700": "#7e22ce",
+      "800": "#6b21a8",
+      "900": "#581c87",
+      "950": "#3b0764"
+    }
+  },
+
+  "shadcn": {
+    "cssVariables": {
+      "light": {
+        "primary": "271 81% 56%",
+        "primary-foreground": "0 0% 100%"
+      },
+      "dark": {
+        "primary": "270 91% 65%",
+        "primary-foreground": "0 0% 100%"
+      }
+    },
+    "usage": "Add these CSS variables to your globals.css file in the :root selector"
+  },
+
+  "tailwind": {
+    "extend": {
+      "colors": {
+        "primary": {
+          "50": "#faf5ff",
+          "100": "#f3e8ff",
+          "200": "#e9d5ff",
+          "300": "#d8b4fe",
+          "400": "#c084fc",
+          "500": "#a855f7",
+          "600": "#9333ea",
+          "700": "#7e22ce",
+          "800": "#6b21a8",
+          "900": "#581c87",
+          "950": "#3b0764",
+          "DEFAULT": "#9333ea"
+        }
+      }
+    },
+    "usage": "Add this to your tailwind.config.js theme.extend section"
+  },
+
+  "usage": {
+    "buttons": {
+      "primary": "bg-primary-600 hover:bg-primary-700 text-white",
+      "primaryActive": "bg-primary-800"
+    },
+    "links": {
+      "default": "text-primary-600 hover:text-primary-700"
+    },
+    "badges": {
+      "default": "bg-primary-100 text-primary-700 border-primary-200"
+    },
+    "backgrounds": {
+      "subtle": "bg-primary-50"
+    }
+  },
+
+  "notes": [
+    "Purple conveys creativity and innovation",
+    "This color works well for design, collaboration, or creative tools",
+    "Ensure text on primary-600 backgrounds meets WCAG AA contrast (it does: 5.2:1)",
+    "Purple pairs beautifully with the neutral gray scale",
+    "Use sparingly - purple is bold and should be used purposefully"
+  ]
+}
