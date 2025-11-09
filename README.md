@@ -97,7 +97,7 @@ This balance creates a family resemblance while allowing distinct personalities.
 
 ### Recommended Foundation
 
-- **Framework:** React, Next.js, or similar
+- **Framework:** React with Next.js or TanStack Start
 - **Styling:** Tailwind CSS
 - **Components:** shadcn/ui
 - **Icons:** Lucide Icons
@@ -109,6 +109,7 @@ This balance creates a family resemblance while allowing distinct personalities.
 - **Tailwind CSS** - Built-in 4px spacing, easy to apply tokens, utility-first
 - **Inter font** - Modern, readable, widely used in SaaS products
 - **Copy, not install** - You own the code, easy to customize
+- **TanStack Start** - Modern full-stack framework with type-safe routing and server functions
 
 ---
 
@@ -142,8 +143,12 @@ Pick a primary color that reflects your product's personality:
 
 ### Step 2: Set Up Your Project
 
+Choose your preferred framework:
+
+#### Option A: Next.js
+
 ```bash
-# Create Next.js project (or your preferred framework)
+# Create Next.js project
 npx create-next-app@latest my-emergence-app
 
 # Initialize Tailwind (if not already done)
@@ -158,11 +163,35 @@ npx shadcn@latest init
 # - CSS variables: Yes
 ```
 
+#### Option B: TanStack Start
+
+```bash
+# Create TanStack Start project
+pnpm create @tanstack/start@latest my-emergence-app
+
+# During setup, choose:
+# - Enable Tailwind CSS: Yes
+# - Enable ESLint: Yes (recommended)
+
+cd my-emergence-app
+pnpm install
+
+# Initialize shadcn/ui
+npx shadcn@latest init
+
+# Choose:
+# - Style: Default
+# - Base color: Neutral
+# - CSS variables: Yes
+```
+
 ### Step 3: Configure Design Tokens
+
+#### For Next.js
 
 **Install Inter font:**
 ```tsx
-// app/layout.tsx (Next.js)
+// app/layout.tsx
 import { Inter } from 'next/font/google'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -179,6 +208,89 @@ export default function RootLayout({ children }) {
 **Set your brand color:**
 ```css
 /* app/globals.css */
+@layer base {
+  :root {
+    --primary: YOUR_COLOR_HSL;  /* e.g., 221 83% 53% for blue */
+    --primary-foreground: 0 0% 100%;
+    /* shadcn provides the rest */
+  }
+}
+```
+
+#### For TanStack Start
+
+**Install Inter font:**
+```bash
+pnpm add @fontsource-variable/inter
+```
+
+**Import Inter in your root route:**
+```tsx
+// src/routes/__root.tsx
+/// <reference types="vite/client" />
+import { createRootRoute, Outlet, Scripts, HeadContent } from '@tanstack/react-router'
+import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import '@fontsource-variable/inter'
+import appCss from '../styles/app.css?url'
+
+export const Route = createRootRoute({
+  head: () => ({
+    meta: [
+      { charSet: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { title: 'My Emergence App' },
+    ],
+    links: [
+      { rel: 'stylesheet', href: appCss }
+    ],
+  }),
+  component: RootComponent,
+})
+
+function RootComponent() {
+  return (
+    <RootDocument>
+      <Outlet />
+    </RootDocument>
+  )
+}
+
+function RootDocument({ children }: { children: React.ReactNode }) {
+  return (
+    <html>
+      <head>
+        <HeadContent />
+      </head>
+      <body className="font-sans">
+        {children}
+        <TanStackRouterDevtools position="bottom-right" />
+        <Scripts />
+      </body>
+    </html>
+  )
+}
+```
+
+**Configure Tailwind to use Inter:**
+```js
+// tailwind.config.js
+export default {
+  content: ['./src/**/*.{js,ts,jsx,tsx}'],
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter Variable', 'system-ui', 'sans-serif'],
+      },
+    },
+  },
+}
+```
+
+**Set your brand color:**
+```css
+/* src/styles/app.css */
+@import 'tailwindcss';
+
 @layer base {
   :root {
     --primary: YOUR_COLOR_HSL;  /* e.g., 221 83% 53% for blue */
@@ -317,6 +429,8 @@ Study these to understand the aesthetic we're aiming for.
 - [Tailwind CSS](https://tailwindcss.com)
 - [Radix UI](https://radix-ui.com)
 - [Lucide Icons](https://lucide.dev)
+- [TanStack Start](https://tanstack.com/start)
+- [Next.js](https://nextjs.org)
 
 **Typography:**
 - [Inter Font](https://rsms.me/inter/)
